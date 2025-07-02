@@ -2,10 +2,9 @@
   "name": "headon-clone",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "build": "npx vite build",
-    "dev": "vite",
-    "preview": "vite preview"
+ "scripts": {
+    "build": "vite build", 
+    "dev": "vite dev"     
   },
   "engines": {
     "node": "18.x"
