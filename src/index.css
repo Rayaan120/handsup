@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  10%, 30% { opacity: 1; }
+  40%, 100% { opacity: 0; }
+}
+
+
+/* Move Chatbase iframe up so it doesn’t overlap WhatsApp button */
+iframe[src*="chatbase"] {
+  bottom: 100px !important;
+}
