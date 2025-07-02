@@ -1,6 +1,6 @@
 // AboutContent.jsx
 import React from "react";
-import Navbar from "@/Components/Navbar";
+
 import CTASection from "@/Components/CTASection";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
