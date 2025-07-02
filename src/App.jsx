@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import HomePage from "./HomePage";
-import AboutContent from "@/components/AboutContent";
-import Portfolio from "@/components/Portfolio";
-import Contact from "@/components/Contact";
-import Services from "@/components/Services";
-import Navbar from "@/components/Navbar"; // Make sure to import Navbar
+import AboutContent from "@/Components/AboutContent";
+import Portfolio from "@/Components/Portfolio";
+import Contact from "@/Components/Contact";
+import Services from "@/Components/Services";
+import Navbar from "@/Components/Navbar"; // Make sure to import Navbar
 
 import { useEffect } from "react";
 
