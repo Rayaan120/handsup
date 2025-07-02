@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
+
 import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
