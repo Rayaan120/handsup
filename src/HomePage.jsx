@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/Components/ui/button";
 import { Link } from "react-router-dom";
 import { FaInstagram, FaTwitter, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc"; // Colored Google logo
