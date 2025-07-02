@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "@/components/Navbar"; // Adjust path as needed
+
 import emailjs from "@emailjs/browser";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion"; // ✅ Added this
