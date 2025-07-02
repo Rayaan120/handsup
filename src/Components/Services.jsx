@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 import { FaInstagram, FaTwitter, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { motion } from "framer-motion"; // ✅ Added this
-import ThreeDStack from "@/components/ThreeDStack"; // ✅ Adjust path if needed
+
 import { Helmet } from "react-helmet";
 
 
