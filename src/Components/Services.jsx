@@ -158,12 +158,7 @@ export default function ExhibitionWebsite() {
         </div>
       </motion.div>
 
-      {/* 3D Stack Visual Column */}
-     <motion.div className="md:w-1/2 flex justify-center">
-  <div className="col-span-1 md:col-span-2 flex justify-center items-center">
-    <ThreeDStack />
-  </div>
-</motion.div>
+  
     </div>
   </section>
 
