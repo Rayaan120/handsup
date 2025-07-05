@@ -8,7 +8,12 @@ import { useInView } from 'react-intersection-observer';
 import { Link } from "react-router-dom";
 import { FaInstagram, FaTwitter, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { Helmet } from "react-helmet";
-
+import {
+  PiPhoneCallDuotone,
+  PiEnvelopeSimpleDuotone,
+  PiMapPinDuotone,
+  PiClockDuotone,
+} from "react-icons/pi";
 
 export default function Contact() {
   const [emailError, setEmailError] = React.useState("");
@@ -87,7 +92,8 @@ export default function Contact() {
 
 
 
-      <div className="flex-grow">
+      <div className="flex-grow font-sans">
+
         <div className="text-center mt-32">
           <button className="bg-[#f2d8ff] py-1.5 px-4 rounded-full text-xs text-[#333]">
             Get In Touch
@@ -101,16 +107,16 @@ export default function Contact() {
 
         </div>
 
-        <div className="flex flex-wrap justify-between gap-6 px-8 py-16">
-          <div className="flex-1 min-w-[350px]">
-  <h3 className="text-3xl font-extrabold mb-10 text-center text-white tracking-tight">
-  Contact Us
-</h3>
-
-  <form
-    onSubmit={handleSubmit}
-    className="border border-white rounded-xl p-6 space-y-4 bg-[#000000]/60 backdrop-blur"
-  >
+       <div className="flex flex-col items-center gap-16 px-12 py-20 max-w-6xl mx-auto">
+  {/* Contact Us form */}
+  <div className="w-full max-w-5xl">
+    <h3 className="text-3xl font-extrabold mb-10 text-center text-white tracking-tight">
+      Contact Us
+    </h3>
+    <form
+      onSubmit={handleSubmit}
+      className="border border-white rounded-xl p-10 space-y-6 bg-[#000000]/60 backdrop-blur"
+    >
     <div>
       <label className="block text-sm mb-1 text-white">First name *</label>
       <input
@@ -182,45 +188,52 @@ export default function Contact() {
 </div>
 
 
-        <div className="flex-1 min-w-[350px]">
-  <h3 className="text-3xl font-extrabold mb-10 text-center text-white tracking-tight">
-    Want to Reach Us Quicker?
-  </h3>
-
-  <div className="space-y-6">
+     {/* Want to Reach Us Quicker cards */}
+  <div className="w-full max-w-5xl">
+    <h3 className="text-3xl font-extrabold mb-10 text-center text-white tracking-tight">
+      Want to Reach Us Quicker?
+    </h3>
+    <div className="space-y-8">
     {[
       {
-        icon: "📞",
+        icon: <PiPhoneCallDuotone className="text-5xl text-purple-400" />,
         title: "Phone",
         lines: ["+971 4 3322218", "+971 50 6975805"],
       },
       {
-        icon: "✉️",
+        icon: <PiEnvelopeSimpleDuotone className="text-5xl text-pink-400" />,
         title: "Email",
         lines: ["marketing@headon.ae", "contact@headon.ae"],
       },
       {
-        icon: "📍",
+        icon: <PiMapPinDuotone className="text-5xl text-blue-400" />,
         title: "Office",
         lines: ["17 14a Street, Ras Al Khor, Dubai", "United Arab Emirates"],
       },
       {
-        icon: "⏰",
+        icon: <PiClockDuotone className="text-5xl text-yellow-400" />,
         title: "Business Hours",
         lines: ["Mon - Sat: 9AM – 6PM", "Sun: Closed"],
       },
     ].map(({ icon, title, lines }, idx) => (
-      <div
+      <motion.div
         key={idx}
-        className="relative group bg-white/5 border border-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-xl hover:scale-[1.02] hover:shadow-2xl transition-transform duration-300"
+        whileHover={{ scale: 1.07 }}
+        transition={{ type: "spring", stiffness: 250 }}
+        className="relative group bg-white/5 border border-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-xl hover:shadow-purple-500/30 transition-transform duration-300"
       >
         {/* Gradient vertical bar */}
         <div className="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-[#9b51e0] to-[#007bff] rounded-full"></div>
 
         <div className="flex items-start gap-5">
-          <div className="w-14 h-14 min-w-[56px] rounded-full bg-gradient-to-tr from-[#9b51e0] to-[#007bff] text-white flex items-center justify-center text-2xl shadow-md">
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 3 }}
+            transition={{ duration: 0.3 }}
+            className="w-14 h-14 min-w-[56px] rounded-full bg-white/10 text-white flex items-center justify-center text-2xl shadow-inner border border-white/10"
+          >
             {icon}
-          </div>
+          </motion.div>
+
           <div>
             <h4 className="text-lg font-semibold text-white mb-1">{title}</h4>
             <p className="text-sm text-gray-300 leading-relaxed">
@@ -233,32 +246,37 @@ export default function Contact() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     ))}
   </div>
 </div>
+</div>
 
-        </div>
 
-        <div
+       <div
   ref={ref}
-  className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-6 px-6 py-12 mx-6 mb-16 bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden"
+  className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-6 px-6 py-12 mx-6 mb-16 bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden font-sans"
 >
   {/* Optional Gradient Glow Aura Behind */}
   <div className="absolute inset-0 bg-gradient-to-tr from-[#9b51e0] to-[#007bff] opacity-20 blur-3xl rounded-3xl -z-10"></div>
 
-  {[ 
-    { count: 1000, label: "Projects Completed" },
-    { count: 500, label: "Happy Clients" },
-    { count: 25, label: "Awards Won" },
-    { count: 15, label: "Years Experience" },
+  {[
+    { count: 2000, label: "Projects Completed", suffix: "+" },
+    { count: 500, label: "Skilled Craftsmen", suffix: "+" },
+    { count: 30000, label: "Inhouse Workspace", suffix: " sqft" },
+    { count: 13, label: "Years Experience", suffix: "+" },
   ].map((item, i) => (
     <div
       key={i}
       className="text-center text-white px-2 py-4 transition-transform duration-300 hover:scale-105"
     >
       <h1 className="text-4xl font-extrabold mb-1">
-        {inView && <CountUp end={item.count} duration={2.5} />}+
+        {inView && (
+          <>
+            <CountUp end={item.count} duration={2.5} separator="," />
+            <span className="ml-1">{item.suffix}</span>
+          </>
+        )}
       </h1>
       <p className="text-sm text-gray-300 font-semibold tracking-wide">
         {item.label}
@@ -266,6 +284,7 @@ export default function Contact() {
     </div>
   ))}
 </div>
+
 
 
 
@@ -318,7 +337,8 @@ export default function Contact() {
     </motion.div>
 
     
- <footer className="bg-[#0e1323] text-white py-12 px-6 md:px-10">
+ <footer className="bg-black text-white font-sans py-12 px-6 md:px-10">
+
   <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
     
     {/* Brand & Contact Info */}
@@ -340,7 +360,7 @@ export default function Contact() {
       <ul className="text-gray-400 space-y-2">
         <li><Link to="/services" className="hover:text-white">Exhibition Stands</Link></li>
         <li><Link to="/services" className="hover:text-white">Interior Design</Link></li>
-        <li><Link to="/services" className="hover:text-white">Fit Out Works</Link></li>
+        <li><Link to="/services" className="hover:text-white">Custom Wooden Requirements</Link></li>
         <li><Link to="/services" className="hover:text-white">Advertising</Link></li>
       </ul>
     </div>

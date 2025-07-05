@@ -65,11 +65,10 @@ const AboutContent = () => {
   >
         <div className="bg-transparent text-white leading-relaxed font-['Inter']">
           {/* HEADER */}
-          <header className="bg-transparent text-white py-24 px-6 relative z-10">
+          <header className="bg-transparent text-white py-24 px-6 relative z-10 font-sans">
+
             <div className="max-w-6xl mx-auto text-center">
-              <div className="inline-block px-5 py-2 text-sm font-semibold text-purple-700 bg-purple-100 rounded-full shadow-md ring-2 ring-purple-300/30 mb-6 tracking-wide">
-                About Head On
-              </div>
+              
               <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-xl">
                 Crafting{" "}
                 <span className="bg-gradient-to-r from-purple-500 via-pink-400 to-blue-500 bg-clip-text text-transparent animate-gradient">
@@ -86,7 +85,8 @@ const AboutContent = () => {
           </header>
 
           {/* OUR STORY */}
-          <section className="bg-transparent text-white py-24 px-6 relative z-10">
+          <section className="bg-transparent text-white py-24 px-6 relative z-10 font-sans">
+
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
               <m.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
                 <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
@@ -133,7 +133,8 @@ const AboutContent = () => {
           </section>
 
           {/* VALUES */}
-          <section className="bg-transparent text-white py-24 px-6 relative">
+          <section className="bg-transparent text-white py-24 px-6 relative font-sans">
+
             <m.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}
               className="max-w-6xl mx-auto text-center"
             >
@@ -188,7 +189,8 @@ const AboutContent = () => {
          
 
           {/* LEGACY */}
-          <section className="relative bg-gradient-to-br from-[#0e0e2c] via-[#1c1c4d] to-[#2f2f65] text-white py-28 px-6 overflow-hidden">
+         <section className="relative bg-gradient-to-br from-[#0e0e2c] via-[#1c1c4d] to-[#2f2f65] text-white py-28 px-6 overflow-hidden font-sans">
+
             <div className="absolute top-0 left-0 w-80 h-80 bg-purple-500 opacity-20 blur-[120px] rounded-full animate-pulse" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 opacity-20 blur-[120px] rounded-full animate-pulse" />
             <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-[600px] h-[200px] bg-white opacity-[0.03] blur-3xl rounded-full z-0" />
@@ -238,7 +240,8 @@ const AboutContent = () => {
           <CTASection />
 
           {/* FOOTER */}
-           <footer className="bg-[#0e1323] text-white py-12 px-6 md:px-10">
+           <footer className="bg-black text-white font-sans py-12 px-6 md:px-10">
+
              <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-sm">
 
                
@@ -261,7 +264,7 @@ const AboutContent = () => {
                  <ul className="text-gray-400 space-y-2">
                    <li><Link to="/services" className="hover:text-white">Exhibition Stands</Link></li>
                    <li><Link to="/services" className="hover:text-white">Interior Design</Link></li>
-                   <li><Link to="/services" className="hover:text-white">Fit Out Works</Link></li>
+                   <li><Link to="/services" className="hover:text-white">Custom Wooden Requirements</Link></li>
                    <li><Link to="/services" className="hover:text-white">Advertising</Link></li>
                  </ul>
                </div>

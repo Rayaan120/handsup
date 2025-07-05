@@ -9,6 +9,36 @@ import { motion } from "framer-motion"; // ✅ Added this
 
 import { Helmet } from "react-helmet";
 
+import {
+  PiCubeBold,
+  PiProjectorScreenChartBold,
+  PiToolboxBold,
+  PiCpuBold,
+  PiLeafBold,
+  PiTruckBold,
+  PiHeadphonesBold,
+  PiChartBarBold,
+  PiLightbulbBold,
+  PiRocketBold,
+  PiHandshakeBold,
+  PiMonitorBold,
+} from "react-icons/pi";
+
+import {
+  
+  PiCubeFocusBold,
+  PiHammerBold,
+  
+} from "react-icons/pi";
+
+import {
+  PiClockCountdownBold,
+  PiTargetBold,
+ 
+  PiSparkleBold,
+} from "react-icons/pi";
+
+
 
 
 
@@ -33,12 +63,11 @@ export default function ExhibitionWebsite() {
             className = "flex-grow"
           >
       {/* Hero Section */}
-     <section className="flex items-center justify-center text-center px-6 py-24 relative z-10">
+   <section className="flex items-center justify-center text-center px-6 py-24 relative z-10 font-sans">
+
   <div className="max-w-3xl space-y-8">
     {/* Tagline Badge */}
-    <div className="inline-block px-5 py-2 text-sm font-semibold text-purple-800 bg-purple-200 rounded-full shadow-md ring-2 ring-purple-400/50">
-      Exhibition Stand Design
-    </div>
+   
 
     {/* Heading */}
     <h1 className="text-5xl md:text-6xl font-extrabold leading-tight tracking-tight drop-shadow-md">
@@ -118,13 +147,15 @@ export default function ExhibitionWebsite() {
     title: "Advertising Solutions",
     desc: "Boost your visibility and customer engagement through compelling ad strategies — from digital campaigns to print, outdoor, activations, and everything in between.",
     services: [
-      "Billboards", "Digital campaigns", "Brand activations",
-      "Printing services", "Brochure & flyer design", "Outdoor media",
-      "Retail branding",
+      "Digital campaigns", "Brand activations",
+      "Printing services", "Outdoor media",
+      "Retail branding", "Roll up banners",
+      "Wall stickers", "Event flags"
     ],
   },
 ].map((section, i) => (
-  <section key={section.id} className="px-6 py-24 text-white bg-gradient-to-b from-[#2F326C] to-black">
+ <section key={section.id} className="px-6 py-24 text-white bg-gradient-to-b from-[#2F326C] to-black font-sans">
+
     <div
       className={`max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-center ${
         i % 2 !== 0 ? "md:flex-row-reverse" : ""
@@ -172,12 +203,12 @@ export default function ExhibitionWebsite() {
       
 
        
-      <motion.section
+  <motion.section
   initial={{ opacity: 0, y: 50 }}
   whileInView={{ opacity: 1, y: 0 }}
   viewport={{ once: true, amount: 0.2 }}
   transition={{ duration: 0.6 }}
-  className="text-center px-8 py-16"
+  className="text-center px-8 py-16 font-sans"
 >
   <h2 className="text-3xl font-bold mb-2">Complete Exhibition Solutions</h2>
   <p className="text-gray-300 max-w-2xl mx-auto mb-10">
@@ -189,42 +220,42 @@ export default function ExhibitionWebsite() {
       {
         title: "Custom 3D Design",
         desc: "Photorealistic visualizations before production.",
-        icon: "🎨",
+        icon: <PiCubeBold />,
       },
       {
         title: "Project Management",
         desc: "From planning to execution, we handle it all.",
-        icon: "🧑‍💼",
+        icon: <PiProjectorScreenChartBold />,
       },
       {
         title: "On-site Installation",
         desc: "Professional setup team at your service.",
-        icon: "🏗️",
+        icon: <PiToolboxBold />,
       },
       {
         title: "Tech Integration",
         desc: "Interactive screens, AR/VR, and more.",
-        icon: "🔌",
+        icon: <PiCpuBold />,
       },
       {
         title: "Sustainable Materials",
         desc: "Eco-friendly and reusable construction.",
-        icon: "🌱",
+        icon: <PiLeafBold />,
       },
       {
         title: "Storage & Transport",
         desc: "Safe handling before and after events.",
-        icon: "🚚",
+        icon: <PiTruckBold />,
       },
       {
         title: "24/7 Event Support",
         desc: "Always on call for smooth operations.",
-        icon: "⏰",
+        icon: <PiHeadphonesBold />,
       },
       {
         title: "Post-event Reports",
         desc: "Insights and analytics delivered fast.",
-        icon: "📊",
+        icon: <PiChartBarBold />,
       },
     ].map(({ title, desc, icon }, index) => (
       <motion.div
@@ -235,7 +266,7 @@ export default function ExhibitionWebsite() {
         transition={{ delay: index * 0.1, duration: 0.4, ease: "easeOut" }}
         className="bg-[#000000]/60 backdrop-blur border border-white p-6 rounded-xl shadow-lg transition hover:scale-105 duration-300 text-left"
       >
-        <div className="text-3xl mb-2">{icon}</div>
+        <div className="text-4xl text-purple-400 mb-4">{icon}</div>
         <h3 className="font-semibold text-lg mb-1">{title}</h3>
         <p className="text-sm text-gray-300">{desc}</p>
       </motion.div>
@@ -244,50 +275,52 @@ export default function ExhibitionWebsite() {
 </motion.section>
 
 
+
       {/* Process Section with custom emojis */}
 <motion.section
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
   transition={{ staggerChildren: 0.15 }}
-  className="text-center p-10 max-w-6xl mx-auto bg-[#000000]/60 backdrop-blur border border-white rounded-xl"
+  className="text-center p-10 max-w-6xl mx-auto bg-[#000000]/60 backdrop-blur border border-white rounded-xl font-sans"
 >
   <h2 className="text-2xl font-bold mb-2 text-white">Our Process</h2>
   <p className="text-gray-300 max-w-xl mx-auto mb-8">
     A proven methodology that ensures your exhibition stand exceeds expectations
   </p>
+
   <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
     {[
       {
         title: "Concept Development",
         desc: "We start with understanding your brand, objectives, and target audience to create compelling concepts.",
-        icon: "🧠",
+        icon: <PiLightbulbBold />,
       },
       {
         title: "3D Design & Visualization",
         desc: "Our designers create detailed 3D models and photorealistic renderings for your approval.",
-        icon: "🖼️",
+        icon: <PiCubeFocusBold />,
       },
       {
         title: "Mock Up",
         desc: "Expert craftsmen bring your design to life using premium materials and advanced techniques.",
-        icon: "🛠️",
+        icon: <PiHammerBold />,
       },
       {
         title: "Installation & Support",
         desc: "Professional installation team ensures flawless setup and provides on-site support throughout your event.",
-        icon: "⚙️",
+        icon: <PiHandshakeBold />,
       },
     ].map(({ title, desc, icon }) => (
       <motion.div
         key={title}
         variants={{
           hidden: { opacity: 0, y: 40 },
-          visible: { opacity: 1, y: 0 }
+          visible: { opacity: 1, y: 0 },
         }}
         className="text-left bg-[#111] text-white p-6 rounded-lg border-t-4 border-purple-500 shadow-md transition duration-300 hover:shadow-2xl hover:scale-105"
       >
-        <div className="text-3xl mb-2">{icon}</div>
+        <div className="text-4xl text-purple-400 mb-4">{icon}</div>
         <h3 className="font-bold mb-2">{title}</h3>
         <p className="text-sm text-gray-300">{desc}</p>
       </motion.div>
@@ -296,13 +329,14 @@ export default function ExhibitionWebsite() {
 </motion.section>
 
 
+
 {/* Why Choose Us Section */}
 <motion.section
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
   transition={{ staggerChildren: 0.15 }}
-  className="text-center px-8 py-16"
+  className="text-center px-8 py-16 font-sans"
 >
   <h2 className="text-3xl font-bold mb-2">Why Choose Us</h2>
   <p className="text-gray-300 max-w-xl mx-auto mb-10">
@@ -312,22 +346,22 @@ export default function ExhibitionWebsite() {
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
     {[
       {
-        icon: "⚡",
+        icon: <PiClockCountdownBold />,
         title: "Fast Turnaround",
         desc: "We deliver on tight timelines without compromising quality.",
       },
       {
-        icon: "🎯",
+        icon: <PiTargetBold />,
         title: "Strategic Designs",
         desc: "Our stands are built to attract, engage, and convert visitors.",
       },
       {
-        icon: "🛠️",
+        icon: <PiToolboxBold />,
         title: "Full-Service Support",
         desc: "From concept to setup and beyond — we’ve got it all covered.",
       },
       {
-        icon: "💡",
+        icon: <PiSparkleBold />,
         title: "Creative Innovation",
         desc: "We integrate tech like AR/VR for future-ready experiences.",
       },
@@ -336,11 +370,11 @@ export default function ExhibitionWebsite() {
         key={title}
         variants={{
           hidden: { opacity: 0, y: 30 },
-          visible: { opacity: 1, y: 0 }
+          visible: { opacity: 1, y: 0 },
         }}
         className="bg-[#000000]/60 backdrop-blur p-6 rounded-xl text-left shadow-md border border-white hover:shadow-2xl hover:scale-[1.05] transition-all duration-300 ease-in-out transform hover:-translate-y-2"
       >
-        <div className="text-3xl mb-2">{icon}</div>
+        <div className="text-4xl text-purple-400 mb-4">{icon}</div>
         <h3 className="font-bold text-lg mb-1">{title}</h3>
         <p className="text-sm text-gray-300">{desc}</p>
       </motion.div>
@@ -350,14 +384,16 @@ export default function ExhibitionWebsite() {
 
 
 
+
       {/* Call to Action */}
       {/* Call to Action */}
 <section
-  className="text-white text-center p-10"
+  className="text-white text-center p-10 font-sans"
   style={{
     background: "linear-gradient(360deg, #000000 0.5757%, #2F356C 100%)",
   }}
 >
+
   <h2 className="text-3xl font-bold mb-2">Ready to Make Your Mark?</h2>
   <p className="mb-6 max-w-xl mx-auto">
     Let's create an exhibition stand that stops visitors in their tracks and drives real business results
@@ -374,7 +410,8 @@ export default function ExhibitionWebsite() {
       
       </motion.div>
       {/* Footer */}
-       <footer className="bg-[#0e1323] text-white py-12 px-6 md:px-10">
+       <footer className="bg-black text-white font-sans py-12 px-6 md:px-10">
+
          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
            
            {/* Brand & Contact Info */}
@@ -396,7 +433,7 @@ export default function ExhibitionWebsite() {
              <ul className="text-gray-400 space-y-2">
                <li><Link to="/services" className="hover:text-white">Exhibition Stands</Link></li>
                <li><Link to="/services" className="hover:text-white">Interior Design</Link></li>
-               <li><Link to="/services" className="hover:text-white">Fit Out Works</Link></li>
+               <li><Link to="/services" className="hover:text-white">Custom Wooden Requirements</Link></li>
                <li><Link to="/services" className="hover:text-white">Advertising</Link></li>
              </ul>
            </div>

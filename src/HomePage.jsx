@@ -101,10 +101,10 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="relative z-20 container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between h-full">
           <div className="text-white max-w-xl md:max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight mb-3">
+           <h1 className="text-5xl md:text-6xl font-sans font-bold leading-tight mb-3">
               Welcome to <br />
               <span className="block">Head On</span>
-              <span className="block">Technical Services</span>
+              
             </h1>
             <div className="w-36 h-1 bg-purple-500 mb-6"></div>
             <p className="text-lg md:text-xl mb-8">
@@ -215,7 +215,7 @@ export default function HomePage() {
           <div className="text-lg text-gray-300 flex justify-center items-center gap-3 mt-2">
             <span className="text-yellow-400 text-xl">★★★★★</span>
             <span className="font-semibold text-white">4.9</span>
-            <span className="text-gray-500">• 150+ Reviews</span>
+            <span className="text-gray-500">• 60+ Reviews</span>
           </div>
         </div>
 
@@ -331,7 +331,8 @@ export default function HomePage() {
       </section>
 
       {/* Footer */}
-       <footer className="bg-[#0e1323] text-white py-12 px-6 md:px-10">
+       <footer className="bg-black text-white font-sans py-12 px-6 md:px-10">
+
                     <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
                       
                       {/* Brand & Contact Info */}
@@ -353,7 +354,7 @@ export default function HomePage() {
                         <ul className="text-gray-400 space-y-2">
                           <li><Link to="/services" className="hover:text-white">Exhibition Stands</Link></li>
                           <li><Link to="/services" className="hover:text-white">Interior Design</Link></li>
-                          <li><Link to="/services" className="hover:text-white">Fit Out Works</Link></li>
+                          <li><Link to="/services" className="hover:text-white">Custom Wooden Requirements</Link></li>
                           <li><Link to="/services" className="hover:text-white">Advertising</Link></li>
                         </ul>
                       </div>

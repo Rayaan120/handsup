@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 
 const CTASection = () => {
   return (
-    <section className="relative py-16 px-6 sm:py-24 sm:px-12 md:py-32 overflow-hidden bg-[#0f0f25] text-white rounded-3xl shadow-2xl my-20 mx-4">
+   <section className="relative py-16 px-6 sm:py-24 sm:px-12 md:py-32 overflow-hidden bg-[#0f0f25] text-white rounded-3xl shadow-2xl my-20 mx-4 font-sans">
+
 
 
   {/* Floating Aurora Glow Effects */}
