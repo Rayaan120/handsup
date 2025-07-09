@@ -108,7 +108,7 @@ export default function HomePage() {
             </h1>
             <div className="w-36 h-1 bg-purple-500 mb-6"></div>
             <p className="text-lg md:text-xl mb-8">
-              From planning to execution, your comprehensive technical services & solutions partner.
+             from planning to execution, we manage every detail so you shine at every event.
             </p>
             <Link to="/services">
               <button className="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded transition">
