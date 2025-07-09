@@ -12,3 +12,36 @@
 iframe[src*="chatbase"] {
   bottom: 100px !important;
 }
+
+@font-face {
+  font-family: 'Warfare';
+  src: url('./assets/fonts/warfare.woff') format('woff'); /* Adjust the path as needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* You might want to set a base font for your body as well */
+body {
+  font-family: 'Your-Default-Font', sans-serif;
+}
+
+/*
+  This CSS creates a "fake" slice on letters with the 'sliced' class.
+  It works by creating a small, rotated line on top of the letter.
+  The line's color should match the navbar's background to create the illusion of a cut.
+*/
+.sliced::after {
+  content: '';
+  position: absolute;
+  /* Adjust these values to position the slice perfectly */
+  top: 50%;
+  left: -10%;
+  width: 120%; /* Make it wider than the letter */
+  height: 2.5px; /* The thickness of the slice */
+  /* This color should match the background behind the text */
+  background: #0e0e2c; 
+  /* The angle of the slice */
+  transform: translateY(-50%) rotate(-15deg);
+}
+
+

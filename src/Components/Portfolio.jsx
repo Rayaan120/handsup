@@ -11,6 +11,8 @@ export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("All");
 
   const filters = ['All', 'Exhibition Stands', 'Interior Design and Fit-Out Works', 'Custom Wooden Requirements', 'Advertising'];
+  const [showModal, setShowModal] = useState(false);
+const [modalImage, setModalImage] = useState("");
 
   const projects = [
   {
@@ -223,6 +225,18 @@ export default function Portfolio() {
     ? projects
     : projects.filter(project => project.category === activeFilter);
 
+     // Handle opening the modal
+  const handleOpenModal = (image) => {
+    setModalImage(image);
+    setShowModal(true);
+  };
+
+  // Handle closing the modal
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setModalImage("");
+  };
+
   const [ref, inView] = useInView({ triggerOnce: true });
 
   return (
@@ -318,57 +332,48 @@ export default function Portfolio() {
       {/* Overlay (optional visual polish) */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
 
-      {/* Optional icon or zoom effect */}
-      <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition duration-300">
-        <a
-  href={project.image}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition duration-300"
->
-  <div className="bg-white/80 text-black text-xs font-semibold px-3 py-1 rounded-full shadow">
-    View
-  </div>
-</a>
-
+     {/* View Button */}
+            <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition duration-300">
+              <button
+                onClick={() => handleOpenModal(project.image)}  // Open the modal with the clicked image
+                className="bg-white/80 text-black text-xs font-semibold px-3 py-1 rounded-full shadow"
+              >
+                View
+              </button>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  ))}
-</div>
+     
 
-
-        <div
-  ref={ref}
-  className="bg-gradient-to-br from-[#10002b] via-[#1a1d4a] to-[#2c2f6c] py-20 px-6 text-center font-sans"
->
-
-  <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-10 tracking-tight">
-    Our Track Record Speaks for Itself
-  </h2>
-
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 max-w-6xl mx-auto">
-    {[
-      { label: "Projects Completed", value: 1000 },
-      { label: "Happy Clients", value: 500 },
-      { label: "Awards Won", value: 25 },
-      { label: "Years Experience", value: 15 },
-    ].map(({ label, value }, index) => (
-      <div
-        key={index}
-        className="bg-white/5 border border-white/10 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:scale-105 transform transition-all duration-300"
+    {/* Modal */}
+{showModal && (
+  <div
+    className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 transition-opacity duration-300"
+    onClick={handleCloseModal} // Close modal when clicking outside
+  >
+    <div
+      className="relative bg-white p-6 rounded-lg max-w-4xl mx-auto transition-all transform scale-100 duration-300 ease-in-out"
+      onClick={(e) => e.stopPropagation()}  // Prevent closing modal when clicking inside
+    >
+      {/* Image */}
+      <img
+        src={modalImage} // The image to show in the modal
+        alt="Modal Image"
+        className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-lg"
+      />
+      {/* Close Button */}
+      <button
+        onClick={handleCloseModal}
+        className="absolute top-3 right-3 text-white bg-black rounded-full p-3 shadow-md hover:bg-gray-700"
       >
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-purple-400 mb-2">
-          {inView && <CountUp end={value} duration={2} />}+
-        </h1>
-        <p className="text-sm text-gray-300 uppercase tracking-wide">
-          {label}
-        </p>
-      </div>
-    ))}
+        X
+      </button>
+    </div>
   </div>
-</div>
+)}
 
-        
+
 
        <div
   className="text-white text-center py-20 px-6 relative overflow-hidden font-sans"
@@ -412,7 +417,7 @@ export default function Portfolio() {
                 {/* Brand & Contact Info */}
                 <div>
                   <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-                    Head <span className="ml-1">On</span>
+                    HEAD <span className="ml-1">ON</span>
                   </h3>
                   <p className="text-gray-400 mb-4">
                     Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.

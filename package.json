@@ -2,12 +2,10 @@
   "name": "headon-clone",
   "version": "1.0.0",
   "private": true,
-  
   "scripts": {
-    "build": "vite build", 
-    "dev": "vite dev"     
+    "build": "vite build",
+    "dev": "vite dev"
   },
-  
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@vitejs/plugin-react": "^4.5.1",

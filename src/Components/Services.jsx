@@ -101,13 +101,12 @@ export default function ExhibitionWebsite() {
 </section>
 
 
-{/* Services Section */}
-    {/* Updated Services Section with 4 Animated Blocks */}
 {[
   {
     id: "01",
     title: "Exhibition Stand Design",
-    desc: "We specialize in designing and building eye-catching exhibition stands that elevate your brand presence, engage attendees, and drive impactful business outcomes at events and trade shows.",
+    image: "/Images/exhibition.jpg",
+    desc: "We specialize in designing and building eye-catching exhibition stands...",
     services: [
       "Custom 3D design", "Modular booths", "Double deck stands", "Portable displays",
       "Interactive elements", "Lighting integration", "Project management", "Mall & venue approvals",
@@ -117,7 +116,8 @@ export default function ExhibitionWebsite() {
   {
     id: "02",
     title: "Interior Design and Fit-Out Works",
-    desc: "Transform your space with creative interior design solutions that blend aesthetics and functionality — whether it's retail, office, hospitality, or commercial environments.",
+    image: "/Images/interior.jpg",
+    desc: "Transform your space with creative interior design solutions...",
     services: [
       "Concept development", "3D visualization", "Furniture layout", "Material selection",
       "Lighting plans", "Color palette curation", "Retail & office interiors", "Mood boards",
@@ -127,40 +127,29 @@ export default function ExhibitionWebsite() {
   {
     id: "03",
     title: "Custom Wooden Requirements",
-    desc: "Delivering turnkey fit-out services that bring your vision to life — from civil works and carpentry to electrical, painting, and final finishes, on time and with quality assured.",
+    image: "/Images/woodwork.jpg",
+    desc: "Delivering turnkey fit-out services that bring your vision to life...",
     services: [
-      "Bespoke furniture design",
-  "Custom cabinetry",
-  "Wardrobes & closets",
-  "Wooden wall paneling",
-  "Reception desks & counters",
-  "Custom shelving & storage",
-  "Doors & door frames",
-  "Wooden partition systems",
-  "Decorative wood elements",
-  "Joinery & detailing",
-  "Staining, polishing & finishes",
+      "Bespoke furniture design", "Custom cabinetry", "Wardrobes & closets",
+      "Wooden wall paneling", "Reception desks & counters", "Custom shelving & storage",
+      "Doors & door frames", "Wooden partition systems", "Decorative wood elements",
+      "Joinery & detailing", "Staining, polishing & finishes",
     ],
   },
   {
     id: "04",
     title: "Advertising Solutions",
-    desc: "Boost your visibility and customer engagement through compelling ad strategies — from digital campaigns to print, outdoor, activations, and everything in between.",
+    image: "/Images/advertising.jpg",
+    desc: "Boost your visibility and customer engagement through compelling ad strategies...",
     services: [
-      "Digital campaigns", "Brand activations",
-      "Printing services", "Outdoor media",
-      "Retail branding", "Roll up banners",
-      "Wall stickers", "Event flags"
+      "Digital campaigns", "Brand activations", "Printing services", "Outdoor media",
+      "Retail branding", "Roll up banners", "Wall stickers", "Event flags"
     ],
   },
 ].map((section, i) => (
- <section key={section.id} className="px-6 py-24 text-white bg-gradient-to-b from-[#2F326C] to-black font-sans">
-
-    <div
-      className={`max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-center ${
-        i % 2 !== 0 ? "md:flex-row-reverse" : ""
-      }`}
-    >
+  <section key={section.id} className="px-6 py-24 text-white bg-gradient-to-b from-[#2F326C] to-black font-sans">
+    <div className={`max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-center ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}>
+      
       {/* Text Column */}
       <motion.div
         initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
@@ -189,11 +178,25 @@ export default function ExhibitionWebsite() {
         </div>
       </motion.div>
 
-  
+      {/* Image Column */}
+      <motion.div
+        initial={{ opacity: 0, x: i % 2 === 0 ? 50 : -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="md:w-1/2"
+      >
+         <img 
+    src={section.image} 
+    alt={section.title} 
+    className={`w-full h-auto rounded-lg shadow-xl object-cover ${section.id === "04" ? "max-w-full mx-auto" : ""}`}
+  />
+      </motion.div>
+
     </div>
   </section>
-
 ))}
+
 
 
 
@@ -417,7 +420,7 @@ export default function ExhibitionWebsite() {
            {/* Brand & Contact Info */}
            <div>
              <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-               Head <span className="ml-1">On</span>
+               HEAD <span className="ml-1">ON</span>
              </h3>
              <p className="text-gray-400 mb-4">
                Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.

@@ -102,8 +102,8 @@ export default function HomePage() {
         <div className="relative z-20 container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between h-full">
           <div className="text-white max-w-xl md:max-w-2xl">
            <h1 className="text-5xl md:text-6xl font-sans font-bold leading-tight mb-3">
-              Welcome to <br />
-              <span className="block">Head On</span>
+              Where Brands <br />
+              <span className="block">Come to Life</span>
               
             </h1>
             <div className="w-36 h-1 bg-purple-500 mb-6"></div>
@@ -196,110 +196,106 @@ export default function HomePage() {
 
       {/* Testimonials Section */}
       <section className="relative bg-gradient-to-br from-[#0e0e2c] to-black py-28 px-6 md:px-10 overflow-hidden text-white font-sans">
-        {/* Blurred background glow */}
-        <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
-          <div className="w-[1000px] h-[1000px] rounded-full bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-500 opacity-25 blur-[140px]" />
-        </div>
+  {/* Blurred background glow */}
+  <div className="absolute inset-0 z-0 flex justify-center items-center pointer-events-none">
+    <div className="w-[1000px] h-[1000px] rounded-full bg-gradient-to-br from-purple-600 via-blue-500 to-indigo-500 opacity-25 blur-[140px]" />
+  </div>
 
-        {/* Header */}
-        <div className="relative z-10 text-center mb-20">
-          <div className="flex justify-center items-center gap-3 mb-4">
-            <FcGoogle className="text-[48px] drop-shadow-sm" />
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
-              Trusted by{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
-                Hundreds
-              </span>
-            </h2>
-          </div>
-          <div className="text-lg text-gray-300 flex justify-center items-center gap-3 mt-2">
-            <span className="text-yellow-400 text-xl">★★★★★</span>
-            <span className="font-semibold text-white">4.9</span>
-            <span className="text-gray-500">• 60+ Reviews</span>
-          </div>
-        </div>
+  {/* Header */}
+  <div className="relative z-10 text-center mb-20">
+    <div className="flex justify-center items-center gap-3 mb-4">
+      <FcGoogle className="text-[48px] drop-shadow-sm" />
+      <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+        Trusted by{" "}
+        <span className="bg-gradient-to-r from-purple-400 to-blue-500 text-transparent bg-clip-text">
+          Hundreds
+        </span>
+      </h2>
+    </div>
+    <div className="text-lg text-gray-300 flex justify-center items-center gap-3 mt-2">
+      <span className="text-yellow-400 text-xl">★★★★★</span>
+      <span className="font-semibold text-white">4.9</span>
+      <span className="text-gray-500">• 60+ Reviews</span>
+    </div>
+  </div>
 
-        {/* Carousel */}
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          pagination={{ clickable: true }}
-          loop={true}
-          spaceBetween={30}
-          grabCursor={true}
-          breakpoints={{
-            320: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-          }}
-          className="relative z-10 max-w-6xl mx-auto"
+  {/* Carousel */}
+  <Swiper
+    modules={[Autoplay, Pagination]}
+    autoplay={{ delay: 5000, disableOnInteraction: false }}
+    pagination={{ clickable: true }}
+    loop={true}
+    spaceBetween={30}
+    grabCursor={true}
+    breakpoints={{
+      320: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+    }}
+    className="relative z-10 max-w-6xl mx-auto"
+  >
+    {[
+      [
+        "AGS International General Trading LLC",
+        "We engaged HeadOn Technical Services for the Middle East Energy exhibition in Dubai for two consecutive years (2024 & 2025), and they are the most reliable team with a professional approach.",
+      ],
+      [
+        "Tanya Faulkner",
+        "We had the pleasure of engaging HeadOn Technical Services for designing and building our stand at AccessAbilities Expo 2024, and their team showed professionalism, high skills, and dedication.",
+      ],
+      [
+        "Keemz Dental",
+        "HeadOn Technical Services did an outstanding job constructing our booth at AEEDC 2025, showcasing exceptional expertise and attention to detail that made our booth stand out.",
+      ],
+      [
+        "Yoonus Bin Yoosaf",
+        "I had the pleasure of collaborating with HeadOn Technical Services for our stand at the Wetex Exhibition, and their team delivered an outstanding result with dedication to excellence throughout the process.",
+      ],
+      [
+        "Benita Lileikyte",
+        "We hired HeadOn Technical Services for branding and graphics, and everything went smoothly from the first point of contact, with fast, clear communication and great flexibility.",
+      ],
+      [
+        "Marina Martinovich",
+        "We participated in Automechanika Dubai, and HeadOn did a perfect job with an amazing design. The team was very attentive to every detail, making the process smooth and easy.",
+      ],
+    ].map(([name, review], index) => (
+      <SwiperSlide key={index}>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="group bg-[#141827] border border-white/10 backdrop-blur-lg p-6 md:p-7 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-purple-500/40 hover:scale-[1.02] h-full"
         >
-          {[
-            [
-              "Ahmed Al Mansouri",
-              "Emirates Technologies",
-              "Outstanding exhibition stand design that attracted record visitors to our booth. Professional team with exceptional creativity.",
-            ],
-            [
-              "Sarah Johnson",
-              "Dubai Business Hub",
-              "HeadOn completely transformed our office space. The design exceeded all expectations and the team was incredibly professional.",
-            ],
-            [
-              "Mohammad Hassan",
-              "Premium Retail Group",
-              "Exceptional fit-out work for our retail store. The attention to detail and quality of work was remarkable.",
-            ],
-            [
-              "Lisa Chen",
-              "Innovation Labs",
-              "Innovative advertising solutions that significantly boosted our brand visibility. Highly recommend their creative team.",
-            ],
-            [
-              "David K.",
-              "Skyline Events",
-              "Working with HeadOn was seamless — they delivered a gorgeous exhibition booth under tight deadlines!",
-            ],
-            [
-              "Priya Mehta",
-              "Zen Interiors",
-              "Truly visionary team. They turned our ideas into an immersive, premium design experience.",
-            ],
-          ].map(([name, company, review], index) => (
-            <SwiperSlide key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group bg-[#141827] border border-white/10 backdrop-blur-lg p-6 md:p-7 rounded-2xl shadow-xl transition-all duration-300 hover:shadow-purple-500/40 hover:scale-[1.02] h-full"
-              >
-                <div className="flex items-start gap-4">
-                  {/* Avatar */}
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold shadow-inner text-sm">
-                    {name.split(" ").map((n) => n[0]).join("")}
-                  </div>
+          <div className="flex items-start gap-4">
+            {/* Avatar */}
+            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-white font-bold shadow-inner text-sm">
+              {name.split(" ").map((n) => n[0]).join("")}
+            </div>
 
-                  {/* Testimonial Content */}
-                  <div className="flex-1">
-                    <div className="flex justify-between items-start mb-2">
-                      <div>
-                        <h4 className="text-white font-semibold text-base">{name}</h4>
-                        <p className="text-xs text-gray-400">{company}</p>
-                      </div>
-                      <div className="flex text-yellow-400">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={16} fill="currentColor" stroke="none" />
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-sm text-gray-300 italic leading-relaxed">“{review}”</p>
-                  </div>
+            {/* Testimonial Content */}
+            <div className="flex-1">
+              <div className="flex justify-between items-start mb-2">
+                <div>
+                  <h4 className="text-white font-semibold text-base">{name}</h4>
                 </div>
-              </motion.div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+                <div className="flex text-yellow-400">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} fill="currentColor" stroke="none" />
+                  ))}
+                </div>
+              </div>
+              <p className="text-sm text-gray-300 italic leading-relaxed">“{review}”</p>
+            </div>
+          </div>
+        </motion.div>
+      </SwiperSlide>
+    ))}
+  </Swiper>
+</section>
+
+
+
 
       {/* CTA Section */}
       <section className="relative z-10 py-32 px-6 bg-black overflow-hidden">
@@ -330,98 +326,119 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-       <footer className="bg-black text-white font-sans py-12 px-6 md:px-10">
+   <section className="py-24 px-4 bg-[#0a0a26] text-white">
+  <div className="text-center mb-12">
+    <h2 className="text-5xl font-extrabold tracking-tight leading-tight mb-4">
+      Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">Partners</span>
+    </h2>
+    <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+      We’re proud to collaborate with industry-leading brands and organizations across the globe.
+    </p>
+  </div>
+  <div className="w-full overflow-hidden rounded-xl shadow-lg max-w-7xl mx-auto">
+    <img 
+      src="/Images/partners-full.png" 
+      alt="Our Partners" 
+      className="w-full h-auto object-cover" 
+    />
+  </div>
+</section>
 
-                    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
-                      
-                      {/* Brand & Contact Info */}
-                      <div>
-                        <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-                          Head <span className="ml-1">On</span>
-                        </h3>
-                        <p className="text-gray-400 mb-4">
-                          Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
-                        </p>
-                        <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
-                        <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-                        <p className="text-gray-400 flex items-center gap-2">✉️ contact@headon.ae</p>
-                      </div>
-                  
-                      {/* Services */}
-                      <div>
-                        <h4 className="text-md font-semibold mb-3">Services</h4>
-                        <ul className="text-gray-400 space-y-2">
-                          <li><Link to="/services" className="hover:text-white">Exhibition Stands</Link></li>
-                          <li><Link to="/services" className="hover:text-white">Interior Design</Link></li>
-                          <li><Link to="/services" className="hover:text-white">Custom Wooden Requirements</Link></li>
-                          <li><Link to="/services" className="hover:text-white">Advertising</Link></li>
-                        </ul>
-                      </div>
-                  
-                      {/* Company */}
-                      <div>
-                        <h4 className="text-md font-semibold mb-3">Company</h4>
-                        <ul className="text-gray-400 space-y-2">
-                          <li><Link to="/about" className="hover:text-white">About Us</Link></li>
-                          <li><Link to="/portfolio" className="hover:text-white">Portfolio</Link></li>
-                          <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
-                        </ul>
-                      </div>
-                    </div>
-                  
-                    {/* Bottom Bar */}
-                    <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-6">
-                      <p>© 2025 HeadOn. All rights reserved.</p>
-                  
-                      {/* Privacy/Terms/Cookies */}
-                      <div className="flex gap-6">
-                   <span className="text-gray-500 cursor-not-allowed">Privacy</span>
-      
-                   <span className="text-gray-500 cursor-not-allowed">Terms</span>
-      
-                   <span className="text-gray-500 cursor-not-allowed">Cookies</span>
-      
-                 </div>
-                  
-                      {/* Social Media Icons */}
-                     <div className="flex gap-4 text-white text-sm">
-                    <a
-                      href="https://www.instagram.com/headonts/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-purple-400 transition"
-                    >
-                      <FaInstagram size={18} />
-                    </a>
-                    <a
-                      href="https://twitter.com/headonuae"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-blue-400 transition"
-                    >
-                      <FaTwitter size={18} />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/company/head-on-technical-services-llc"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-blue-500 transition"
-                    >
-                      <FaLinkedinIn size={18} />
-                    </a>
-                    <a
-                      href="https://www.facebook.com/headontsllc/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-blue-600 transition"
-                    >
-                      <FaFacebookF size={18} />
-                    </a>
-                  </div>
-                  
-                    </div>
-                  </footer>
+
+
+      {/* Footer */}
+      <footer className="bg-black text-white font-sans py-12 px-6 md:px-10">
+     
+              <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-sm">
+                
+                {/* Brand & Contact Info */}
+                <div>
+                  <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
+                    HEAD <span className="ml-1">ON</span>
+                  </h3>
+                  <p className="text-gray-400 mb-4">
+                    Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
+                  </p>
+                  <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
+                  <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
+                  <p className="text-gray-400 flex items-center gap-2">✉️ contact@headon.ae</p>
+                </div>
+            
+                {/* Services */}
+                <div>
+                  <h4 className="text-md font-semibold mb-3">Services</h4>
+                  <ul className="text-gray-400 space-y-2">
+                    <li><Link to="/services" className="hover:text-white">Exhibition Stands</Link></li>
+                    <li><Link to="/services" className="hover:text-white">Interior Design</Link></li>
+                    <li><Link to="/services" className="hover:text-white">Custom Wooden Requirements</Link></li>
+                    <li><Link to="/services" className="hover:text-white">Advertising</Link></li>
+                  </ul>
+                </div>
+            
+                {/* Company */}
+                <div>
+                  <h4 className="text-md font-semibold mb-3">Company</h4>
+                  <ul className="text-gray-400 space-y-2">
+                    <li><Link to="/about" className="hover:text-white">About Us</Link></li>
+                    <li><Link to="/portfolio" className="hover:text-white">Portfolio</Link></li>
+                    <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
+                  </ul>
+                </div>
+              </div>
+            
+              {/* Bottom Bar */}
+              <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-6">
+                <p>© 2025 HeadOn. All rights reserved.</p>
+            
+                {/* Privacy/Terms/Cookies */}
+                <div className="flex gap-6">
+                  <span className="text-gray-500 cursor-not-allowed">Privacy</span>
+     
+                  <span className="text-gray-500 cursor-not-allowed">Terms</span>
+     
+                  <span className="text-gray-500 cursor-not-allowed">Cookies</span>
+     
+                </div>
+            
+                {/* Social Media Icons */}
+               <div className="flex gap-4 text-white text-sm">
+              <a
+                href="https://www.instagram.com/headonts/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-purple-400 transition"
+              >
+                <FaInstagram size={18} />
+              </a>
+              <a
+                href="https://twitter.com/headonuae"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 transition"
+              >
+                <FaTwitter size={18} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/head-on-technical-services-llc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-500 transition"
+              >
+                <FaLinkedinIn size={18} />
+              </a>
+              <a
+                href="https://www.facebook.com/headontsllc/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600 transition"
+              >
+                <FaFacebookF size={18} />
+              </a>
+            </div>
+            
+              </div>
+            </footer>
+
     </div>
   );
 }

@@ -95,9 +95,7 @@ export default function Contact() {
       <div className="flex-grow font-sans">
 
         <div className="text-center mt-32">
-          <button className="bg-[#f2d8ff] py-1.5 px-4 rounded-full text-xs text-[#333]">
-            Get In Touch
-          </button>
+          
           <h1 className="text-4xl md:text-5xl font-extrabold mt-4 leading-tight">
   Let’s <span className="bg-gradient-to-r from-[#9b51e0] to-[#007bff] bg-clip-text text-transparent">Build Something Amazing</span> Together
 </h1>
@@ -203,7 +201,7 @@ export default function Contact() {
       {
         icon: <PiEnvelopeSimpleDuotone className="text-5xl text-pink-400" />,
         title: "Email",
-        lines: ["marketing@headon.ae", "contact@headon.ae"],
+        lines: ["reachus@headon.ae"],
       },
       {
         icon: <PiMapPinDuotone className="text-5xl text-blue-400" />,
@@ -302,10 +300,10 @@ export default function Contact() {
 
     <div className="relative z-10 flex flex-col items-center justify-center text-white text-center space-y-4">
       <h3 className="text-2xl md:text-3xl font-semibold leading-relaxed">
-        HeadOn Technical Services LLC
+        Head On Technical Services LLC
       </h3>
       <p className="text-sm md:text-base text-gray-300">
-        B17 14a Street, Ras Al Khor, Dubai, UAE
+       14a Street, Ras Al Khor, Dubai, UAE
       </p>
       <a
         href="https://www.google.com/maps/dir/?api=1&destination=HeadOn+Technical+Services+LLC,+B17+14a+Street,+Ras+Al+Khor,+Dubai,+UAE"
@@ -344,7 +342,7 @@ export default function Contact() {
     {/* Brand & Contact Info */}
     <div>
       <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-        Head <span className="ml-1">On</span>
+        HEAD <span className="ml-1">ON</span>
       </h3>
       <p className="text-gray-400 mb-4">
         Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.

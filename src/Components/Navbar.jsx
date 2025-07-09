@@ -6,15 +6,14 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-   <header className="px-6 md:px-10 py-6 flex justify-between items-center shadow-sm sticky top-0 bg-gradient-to-r from-[#0e0e2c] to-black z-50">
-  {/* Logo */}
-  <Link
-    to="/"
-    className="text-[28px] font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500"
-  >
-    Head On
-  </Link>
-
+    <header className="px-6 md:px-10 py-6 flex justify-between items-center shadow-sm sticky top-0 bg-gradient-to-r from-[#0e0e2c] to-black z-50">
+      {/* Logo */}
+      <Link
+        to="/"
+        className="text-[32px] font-extrabold uppercase bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-500"
+      >
+        HEAD ON
+      </Link>
 
       {/* Desktop Navigation */}
       <nav
@@ -22,7 +21,6 @@ const Navbar = () => {
         aria-label="Main Navigation"
       >
         {["about", "portfolio", "services", "contact"].map((item) => (
-
           <Link
             key={item}
             to={`/${item}`}

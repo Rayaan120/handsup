@@ -78,7 +78,7 @@ const AboutContent = () => {
               </h1>
               <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-blue-400 rounded-full mx-auto mt-6 mb-8" />
               <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed tracking-wide">
-                For over 15 years, Head On has redefined spaces across the UAE — from iconic exhibition stands to stunning interiors, seamless fit-outs, and campaigns that leave lasting impressions.
+                For over 13 years, Head On has redefined spaces across the UAE — from iconic exhibition stands to stunning interiors, seamless fit-outs, and campaigns that leave lasting impressions.
               </p>
               
             </div>
@@ -93,10 +93,10 @@ const AboutContent = () => {
                   Our Story
                 </h2>
                 <p className="text-lg text-gray-300 mb-5 leading-relaxed">
-                  Since 2009, we’ve been crafting environments that inspire, connect, and captivate. From a passionate team of visionaries to one of Dubai’s most trusted creative studios.
+                  Since 2012, we’ve been crafting environments that inspire, connect, and captivate. From a passionate team of visionaries to one of Dubai’s most trusted creative studios.
                 </p>
                 <p className="text-lg text-gray-300 mb-5 leading-relaxed">
-                  With <span className="text-purple-300 font-bold">1000+ projects</span> delivered across exhibitions, interiors, and branding.
+                  With <span className="text-purple-300 font-bold">2000+ projects</span> delivered across exhibitions, interiors, and branding.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
                   At HeadOn, we build <span className="text-blue-400 font-semibold">meaningful experiences</span> that elevate brands.
@@ -201,7 +201,7 @@ const AboutContent = () => {
                 Our Legacy of Excellence
               </h2>
               <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-14 leading-relaxed">
-                Over 15 years of redefining design in the UAE. At HeadOn, we don't just craft spaces — we shape unforgettable stories.
+                Over 13 years of redefining design in the UAE. At HeadOn, we don't just craft spaces — we shape unforgettable stories.
               </p>
               <div className="flex flex-wrap justify-center gap-8">
                 {[
@@ -212,7 +212,7 @@ const AboutContent = () => {
                   },
                   {
                     icon: <PiClockCountdownDuotone className="text-5xl text-blue-400" />,
-                    title: "15+ Years of Trust",
+                    title: "13+ Years of Trust",
                     desc: "A decade and a half of creativity and reliability.",
                   },
                   {
@@ -248,7 +248,7 @@ const AboutContent = () => {
                {/* Brand & Contact Info */}
                <div>
                  <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-                   Head <span className="ml-1">On</span>
+                   HEAD <span className="ml-1">ON</span>
                  </h3>
                  <p className="text-gray-400 mb-4">
                    Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
