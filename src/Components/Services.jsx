@@ -279,57 +279,7 @@ export default function ExhibitionWebsite() {
 
 
 
-      {/* Process Section with custom emojis */}
-<motion.section
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  transition={{ staggerChildren: 0.15 }}
-  className="text-center p-10 max-w-6xl mx-auto bg-[#000000]/60 backdrop-blur border border-white rounded-xl font-sans"
->
-  <h2 className="text-2xl font-bold mb-2 text-white">Our Process</h2>
-  <p className="text-gray-300 max-w-xl mx-auto mb-8">
-    A proven methodology that ensures your exhibition stand exceeds expectations
-  </p>
-
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-    {[
-      {
-        title: "Concept Development",
-        desc: "We start with understanding your brand, objectives, and target audience to create compelling concepts.",
-        icon: <PiLightbulbBold />,
-      },
-      {
-        title: "3D Design & Visualization",
-        desc: "Our designers create detailed 3D models and photorealistic renderings for your approval.",
-        icon: <PiCubeFocusBold />,
-      },
-      {
-        title: "Mock Up",
-        desc: "Expert craftsmen bring your design to life using premium materials and advanced techniques.",
-        icon: <PiHammerBold />,
-      },
-      {
-        title: "Installation & Support",
-        desc: "Professional installation team ensures flawless setup and provides on-site support throughout your event.",
-        icon: <PiHandshakeBold />,
-      },
-    ].map(({ title, desc, icon }) => (
-      <motion.div
-        key={title}
-        variants={{
-          hidden: { opacity: 0, y: 40 },
-          visible: { opacity: 1, y: 0 },
-        }}
-        className="text-left bg-[#111] text-white p-6 rounded-lg border-t-4 border-purple-500 shadow-md transition duration-300 hover:shadow-2xl hover:scale-105"
-      >
-        <div className="text-4xl text-purple-400 mb-4">{icon}</div>
-        <h3 className="font-bold mb-2">{title}</h3>
-        <p className="text-sm text-gray-300">{desc}</p>
-      </motion.div>
-    ))}
-  </div>
-</motion.section>
+      
 
 
 
@@ -419,15 +369,21 @@ export default function ExhibitionWebsite() {
            
            {/* Brand & Contact Info */}
            <div>
-             <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-               HEAD <span className="ml-1">ON</span>
-             </h3>
+                <Link to="/" className="flex items-center">
+  <img 
+    src="/Images/logo1.png" 
+    alt="Logo" 
+    className="h-16 w-auto object-contain"
+
+
+  />
+</Link>
              <p className="text-gray-400 mb-4">
                Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
              </p>
              <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
              <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-             <p className="text-gray-400 flex items-center gap-2">✉️ contact@headon.ae</p>
+             <p className="text-gray-400 flex items-center gap-2">✉️ reachus@headon.ae</p>
            </div>
        
            {/* Services */}

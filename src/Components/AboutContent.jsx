@@ -23,6 +23,20 @@ import {
   PiLightbulbFilamentDuotone,
 } from "react-icons/pi";
 
+import {
+  
+  PiLightbulbBold,
+  
+  PiHandshakeBold,
+  
+} from "react-icons/pi";
+
+import {
+  
+  PiCubeFocusBold,
+  PiHammerBold,
+  
+} from "react-icons/pi";
 
 const AboutContent = () => {
   return (
@@ -134,57 +148,112 @@ const AboutContent = () => {
 
           {/* VALUES */}
           <section className="bg-transparent text-white py-24 px-6 relative font-sans">
+  <m.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    viewport={{ once: true }}
+    className="max-w-6xl mx-auto text-center"
+  >
+    <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 drop-shadow-lg">
+      Our Core Values
+    </h2>
+    <p className="text-gray-300 mb-14 text-base md:text-lg max-w-3xl mx-auto">
+      The foundational principles that shape our culture and every client interaction.
+    </p>
 
-            <m.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}
-              className="max-w-6xl mx-auto text-center"
-            >
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 drop-shadow-lg">
-                Our Core Values
-              </h2>
-              <p className="text-gray-300 mb-14 text-base md:text-lg max-w-3xl mx-auto">
-                The foundational principles that shape our culture and every client interaction.
-              </p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+      {[ 
+        {
+          icon: <PiFlaskDuotone className="text-5xl text-purple-400 mb-4" />,
+          title: "Innovation",
+          desc: "Fresh ideas and future-forward design solutions.",
+        },
+        {
+          icon: <PiMedalDuotone className="text-5xl text-yellow-400 mb-4" />,
+          title: "Excellence",
+          desc: "Highest standards of quality and creativity.",
+        },
+        {
+          icon: <PiHandshakeDuotone className="text-5xl text-pink-400 mb-4" />,
+          title: "Collaboration",
+          desc: "Co-creation and inspiring partnerships.",
+        },
+        {
+          icon: <PiLockLaminatedDuotone className="text-5xl text-blue-400 mb-4" />,
+          title: "Integrity",
+          desc: "Trust, transparency, and reliability.",
+        },
+      ].map(({ icon, title, desc }, i) => (
+        <motion.div
+          key={i}
+          whileHover={{ scale: 1.06 }}
+          transition={{ type: "spring", stiffness: 250 }}
+          className="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-xl hover:shadow-purple-500/30 transition-all duration-300 text-left"
+        >
+          <motion.div whileHover={{ scale: 1.1, rotate: 3 }} transition={{ duration: 0.3 }}>
+            {icon}
+          </motion.div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                {[
-                  {
-                    icon: <PiFlaskDuotone className="text-5xl text-purple-400 mb-4" />,
-                    title: "Innovation",
-                    desc: "Fresh ideas and future-forward design solutions.",
-                  },
-                  {
-                    icon: <PiMedalDuotone className="text-5xl text-yellow-400 mb-4" />,
-                    title: "Excellence",
-                    desc: "Highest standards of quality and creativity.",
-                  },
-                  {
-                    icon: <PiHandshakeDuotone className="text-5xl text-pink-400 mb-4" />,
-                    title: "Collaboration",
-                    desc: "Co-creation and inspiring partnerships.",
-                  },
-                  {
-                    icon: <PiLockLaminatedDuotone className="text-5xl text-blue-400 mb-4" />,
-                    title: "Integrity",
-                    desc: "Trust, transparency, and reliability.",
-                  },
-                ].map(({ icon, title, desc }, i) => (
-                  <motion.div
-                    key={i}
-                    whileHover={{ scale: 1.06 }}
-                    transition={{ type: "spring", stiffness: 250 }}
-                    className="bg-white/10 backdrop-blur-lg border border-white/10 p-6 rounded-2xl shadow-xl hover:shadow-purple-500/30 transition-all duration-300 text-left"
-                  >
-                   <motion.div whileHover={{ scale: 1.1, rotate: 3 }} transition={{ duration: 0.3 }}>
-  {icon}
-</motion.div>
+          <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
+          <p className="text-sm text-gray-300 leading-relaxed">{desc}</p>
+        </motion.div>
+      ))}
+    </div>
+  </m.div>
+</section>
 
-                    <h3 className="text-xl font-bold mb-2 text-white">{title}</h3>
-                    <p className="text-sm text-gray-300 leading-relaxed">{desc}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </m.div>
-          </section>
+     {/* Process Section with custom emojis */}
+<motion.section
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  transition={{ staggerChildren: 0.15 }}
+  className="text-center p-10 max-w-6xl mx-auto bg-[#000000]/60 backdrop-blur border border-white rounded-xl font-sans"
+>
+  <h2 className="text-2xl font-bold mb-2 text-white">Our Process</h2>
+  <p className="text-gray-300 max-w-xl mx-auto mb-8">
+    A proven methodology that ensures your exhibition stand exceeds expectations
+  </p>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    {[
+      {
+        title: "Concept Development",
+        desc: "We start with understanding your brand, objectives, and target audience to create compelling concepts.",
+        icon: <PiLightbulbBold />,
+      },
+      {
+        title: "3D Design & Visualization",
+        desc: "Our designers create detailed 3D models and photorealistic renderings for your approval.",
+        icon: <PiCubeFocusBold />,
+      },
+      {
+        title: "Mock Up",
+        desc: "Expert craftsmen bring your design to life using premium materials and advanced techniques.",
+        icon: <PiHammerBold />,
+      },
+      {
+        title: "Installation & Support",
+        desc: "Professional installation team ensures flawless setup and provides on-site support throughout your event.",
+        icon: <PiHandshakeBold />,
+      },
+    ].map(({ title, desc, icon }) => (
+      <motion.div
+        key={title}
+        variants={{
+          hidden: { opacity: 0, y: 40 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        className="text-left bg-[#111] text-white p-6 rounded-lg border-t-4 border-purple-500 shadow-md transition duration-300 hover:shadow-2xl hover:scale-105"
+      >
+        <div className="text-4xl text-purple-400 mb-4">{icon}</div>
+        <h3 className="font-bold mb-2">{title}</h3>
+        <p className="text-sm text-gray-300">{desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</motion.section>
 
          
 
@@ -207,7 +276,7 @@ const AboutContent = () => {
                 {[
                   {
                     icon: <PiMedalDuotone className="text-5xl text-purple-400" />,
-                    title: "1000+ Projects",
+                    title: "2000+ Projects",
                     desc: "Award-winning projects across the GCC and beyond.",
                   },
                   {
@@ -247,15 +316,21 @@ const AboutContent = () => {
                
                {/* Brand & Contact Info */}
                <div>
-                 <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-                   HEAD <span className="ml-1">ON</span>
-                 </h3>
+                   <Link to="/" className="flex items-center">
+  <img 
+    src="/Images/logo1.png" 
+    alt="Logo" 
+    className="h-16 w-auto object-contain"
+
+
+  />
+</Link>
                  <p className="text-gray-400 mb-4">
                    Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
                  </p>
                  <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
                  <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-                 <p className="text-gray-400 flex items-center gap-2">✉️ contact@headon.ae</p>
+                 <p className="text-gray-400 flex items-center gap-2">✉️ reachus@headon.ae</p>
                </div>
            
                {/* Services */}

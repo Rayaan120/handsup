@@ -11,6 +11,9 @@ import "swiper/css/pagination";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
+
 
 const images = [
   "/Images/your-background1.jpg",
@@ -28,7 +31,7 @@ export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [prevImageIndex, setPrevImageIndex] = useState(0);
-
+  const [ref, inView] = useInView({ triggerOnce: true });
   // Chatbase bot loader
   useEffect(() => {
     if (document.getElementById("Z0IeA1TgPW0pjEwpAGZ1U")) return;
@@ -193,6 +196,39 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+  <div
+  ref={ref}
+  className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-6 px-6 py-12 mx-6 mb-16 bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden font-sans"
+>
+  {/* Optional Gradient Glow Aura Behind */}
+  <div className="absolute inset-0 bg-gradient-to-tr from-[#9b51e0] to-[#007bff] opacity-20 blur-3xl rounded-3xl -z-10"></div>
+
+  {[
+    { count: 2000, label: "Projects Completed", suffix: "+" },
+    { count: 100, label: "Skilled Craftsmen", suffix: "+" },
+    { count: 30000, label: "Inhouse Workspace", suffix: " sqft" },
+    { count: 13, label: "Years Experience", suffix: "+" },
+  ].map((item, i) => (
+    <div
+      key={i}
+      className="text-center text-white px-2 py-4 transition-transform duration-300 hover:scale-105"
+    >
+      <h1 className="text-4xl font-extrabold mb-1">
+        {inView && (
+          <>
+            <CountUp end={item.count} duration={2.5} separator="," />
+            <span className="ml-1">{item.suffix}</span>
+          </>
+        )}
+      </h1>
+      <p className="text-sm text-gray-300 font-semibold tracking-wide">
+        {item.label}
+      </p>
+    </div>
+  ))}
+</div>
+
+ 
 
       {/* Testimonials Section */}
       <section className="relative bg-gradient-to-br from-[#0e0e2c] to-black py-28 px-6 md:px-10 overflow-hidden text-white font-sans">
@@ -293,6 +329,24 @@ export default function HomePage() {
     ))}
   </Swiper>
 </section>
+<section className="py-24 px-4 bg-[#0a0a26] text-white">
+  <div className="text-center mb-12">
+    <h2 className="text-5xl font-extrabold tracking-tight leading-tight mb-4">
+      Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">Partners</span>
+    </h2>
+    <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+      We’re proud to collaborate with industry-leading brands and organizations across the globe.
+    </p>
+  </div>
+  <div className="w-full overflow-hidden rounded-xl shadow-lg max-w-7xl mx-auto">
+    <img 
+      src="/Images/partners-full.png" 
+      alt="Our Partners" 
+      className="w-full h-auto object-cover" 
+    />
+  </div>
+</section>
+
 
 
 
@@ -326,23 +380,7 @@ export default function HomePage() {
         </div>
       </section>
 
-   <section className="py-24 px-4 bg-[#0a0a26] text-white">
-  <div className="text-center mb-12">
-    <h2 className="text-5xl font-extrabold tracking-tight leading-tight mb-4">
-      Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600">Partners</span>
-    </h2>
-    <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-      We’re proud to collaborate with industry-leading brands and organizations across the globe.
-    </p>
-  </div>
-  <div className="w-full overflow-hidden rounded-xl shadow-lg max-w-7xl mx-auto">
-    <img 
-      src="/Images/partners-full.png" 
-      alt="Our Partners" 
-      className="w-full h-auto object-cover" 
-    />
-  </div>
-</section>
+   
 
 
 
@@ -353,15 +391,22 @@ export default function HomePage() {
                 
                 {/* Brand & Contact Info */}
                 <div>
-                  <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-                    HEAD <span className="ml-1">ON</span>
-                  </h3>
+                  <Link to="/" className="flex items-center">
+  <img 
+    src="/Images/logo1.png" 
+    alt="Logo" 
+    className="h-16 w-auto object-contain"
+
+
+  />
+</Link>
+
                   <p className="text-gray-400 mb-4">
                     Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
                   </p>
                   <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
                   <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-                  <p className="text-gray-400 flex items-center gap-2">✉️ contact@headon.ae</p>
+                  <p className="text-gray-400 flex items-center gap-2">✉️ reachus@headon.ae</p>
                 </div>
             
                 {/* Services */}

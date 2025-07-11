@@ -7,12 +7,14 @@ import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { FaInstagram, FaTwitter, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import arrow icons
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("All");
-
+  
   const filters = ['All', 'Exhibition Stands', 'Interior Design and Fit-Out Works', 'Custom Wooden Requirements', 'Advertising'];
   const [showModal, setShowModal] = useState(false);
 const [modalImage, setModalImage] = useState("");
+const [currentImageIndex, setCurrentImageIndex] = useState(0); // Add state for the image index
 
   const projects = [
   {
@@ -103,7 +105,7 @@ const [modalImage, setModalImage] = useState("");
   },
   {
     category: 'Custom Wooden Requirements',
-    image: '/Images/customwooden4.jpg',
+    image: '/Images/customwooden5.jpg',
   },
   {
     category: 'Advertising',
@@ -119,7 +121,7 @@ const [modalImage, setModalImage] = useState("");
   },
   {
     category: 'Custom Wooden Requirements',
-    image: '/Images/customwooden4.jpg',
+    image: '/Images/customwooden6.jpg',
   },
   {
     category: 'Advertising',
@@ -135,7 +137,7 @@ const [modalImage, setModalImage] = useState("");
   },
   {
     category: 'Custom Wooden Requirements',
-    image: '/Images/customwooden5.jpg',
+    image: '/Images/customwooden7.jpg',
   },
   {
     category: 'Advertising',
@@ -149,10 +151,7 @@ const [modalImage, setModalImage] = useState("");
     category: 'Interior Design and Fit-Out Works',
     image: '/Images/interior9.jpg',
   },
-  {
-    category: 'Custom Wooden Requirements',
-    image: '/Images/customwooden6.jpg',
-  },
+ 
   {
     category: 'Advertising',
     image: '/Images/billboard_design_9.jpg',
@@ -167,7 +166,7 @@ const [modalImage, setModalImage] = useState("");
   },
   {
     category: 'Custom Wooden Requirements',
-    image: '/Images/customwooden7.jpg',
+    image: '/Images/customwooden8.jpg',
   },
   {
     category: 'Advertising',
@@ -183,7 +182,7 @@ const [modalImage, setModalImage] = useState("");
   },
   {
     category: 'Custom Wooden Requirements',
-    image: '/Images/customwooden8.jpg',
+    image: '/Images/customwooden9.jpg',
   },
   {
     category: 'Advertising',
@@ -199,7 +198,7 @@ const [modalImage, setModalImage] = useState("");
   },
   {
     category: 'Custom Wooden Requirements',
-    image: '/Images/customwooden9.jpg',
+    image: '/Images/customwooden10.jpg',
   },
   {
     category: 'Advertising',
@@ -213,10 +212,7 @@ const [modalImage, setModalImage] = useState("");
     category: 'Interior Design and Fit-Out Works',
     image: '/Images/interior13.jpg',
   },
-  {
-    category: 'Custom Wooden Requirements',
-    image: '/Images/customwooden10.jpg',
-  },
+  
   
 
 
@@ -226,10 +222,26 @@ const [modalImage, setModalImage] = useState("");
     : projects.filter(project => project.category === activeFilter);
 
      // Handle opening the modal
-  const handleOpenModal = (image) => {
-    setModalImage(image);
-    setShowModal(true);
-  };
+ const handleOpenModal = (image, index) => {
+  setModalImage(image);  // Set the image
+  setCurrentImageIndex(index);  // Set the index for the current image
+  setShowModal(true);  // Show the modal
+};
+
+// Navigate to the next image (right arrow)
+const handleNextImage = () => {
+  const nextIndex = (currentImageIndex + 1) % projects.length; // Loop back to the first image
+  setCurrentImageIndex(nextIndex);
+  setModalImage(projects[nextIndex].image); // Update the modal image
+};
+
+// Navigate to the previous image (left arrow)
+const handlePrevImage = () => {
+  const prevIndex = (currentImageIndex - 1 + projects.length) % projects.length; // Loop back to the last image
+  setCurrentImageIndex(prevIndex);
+  setModalImage(projects[prevIndex].image); // Update the modal image
+};
+
 
   // Handle closing the modal
   const handleCloseModal = () => {
@@ -334,12 +346,13 @@ const [modalImage, setModalImage] = useState("");
 
      {/* View Button */}
             <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition duration-300">
-              <button
-                onClick={() => handleOpenModal(project.image)}  // Open the modal with the clicked image
-                className="bg-white/80 text-black text-xs font-semibold px-3 py-1 rounded-full shadow"
-              >
-                View
-              </button>
+             <button
+  onClick={() => handleOpenModal(project.image, index)}  // Pass both the image and index
+  className="bg-white/80 text-black text-xs font-semibold px-3 py-1 rounded-full shadow"
+>
+  View
+</button>
+
             </div>
           </div>
         ))}
@@ -353,15 +366,15 @@ const [modalImage, setModalImage] = useState("");
     onClick={handleCloseModal} // Close modal when clicking outside
   >
     <div
-      className="relative bg-white p-6 rounded-lg max-w-4xl mx-auto transition-all transform scale-100 duration-300 ease-in-out"
-      onClick={(e) => e.stopPropagation()}  // Prevent closing modal when clicking inside
+      className="relative bg-white p-6 rounded-lg max-w-4xl mx-auto"
+      onClick={(e) => e.stopPropagation()} // Prevent closing modal when clicking inside
     >
-      {/* Image */}
       <img
-        src={modalImage} // The image to show in the modal
+        src={modalImage}
         alt="Modal Image"
         className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-lg"
       />
+
       {/* Close Button */}
       <button
         onClick={handleCloseModal}
@@ -369,9 +382,26 @@ const [modalImage, setModalImage] = useState("");
       >
         X
       </button>
+
+      {/* Left Arrow */}
+      <button
+        onClick={handlePrevImage}  // Navigate to previous image
+        className="absolute top-1/2 left-5 text-white bg-black rounded-full p-3 shadow-md hover:bg-gray-700"
+      >
+        <FaArrowLeft size={24} />
+      </button>
+
+      {/* Right Arrow */}
+      <button
+        onClick={handleNextImage}  // Navigate to next image
+        className="absolute top-1/2 right-5 text-white bg-black rounded-full p-3 shadow-md hover:bg-gray-700"
+      >
+        <FaArrowRight size={24} />
+      </button>
     </div>
   </div>
 )}
+
 
 
 
@@ -416,15 +446,21 @@ const [modalImage, setModalImage] = useState("");
                 
                 {/* Brand & Contact Info */}
                 <div>
-                  <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-                    HEAD <span className="ml-1">ON</span>
-                  </h3>
+                       <Link to="/" className="flex items-center">
+  <img 
+    src="/Images/logo1.png" 
+    alt="Logo" 
+    className="h-16 w-auto object-contain"
+
+
+  />
+</Link>
                   <p className="text-gray-400 mb-4">
                     Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
                   </p>
                   <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
                   <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-                  <p className="text-gray-400 flex items-center gap-2">✉️ contact@headon.ae</p>
+                  <p className="text-gray-400 flex items-center gap-2">✉️ reachus@headon.ae</p>
                 </div>
             
                 {/* Services */}

@@ -40,10 +40,10 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_wpyjduc",
-        "template_gmt8suc",
+        "service_umifcdb",
+        "template_g19lwfq",
         templateParams,
-        "_MaMl2caEo5gsW8HH"
+        "ONRHcKHFmgSbsErnp"
       )
       .then(
         (result) => {
@@ -111,78 +111,90 @@ export default function Contact() {
     <h3 className="text-3xl font-extrabold mb-10 text-center text-white tracking-tight">
       Contact Us
     </h3>
-    <form
-      onSubmit={handleSubmit}
-      className="border border-white rounded-xl p-10 space-y-6 bg-[#000000]/60 backdrop-blur"
+   <form
+  onSubmit={handleSubmit}
+  className="border border-white rounded-xl p-10 space-y-6 bg-[#000000]/60 backdrop-blur"
+>
+  <div>
+    <label className="block text-sm mb-1 text-white">First name *</label>
+    <input
+      name="firstName"
+      type="text"
+      required
+      className="w-full bg-[#1e1e1e] text-white p-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Enter your first name"
+    />
+  </div>
+
+  <div>
+    <label className="block text-sm mb-1 text-white">Last name *</label>
+    <input
+      name="lastName"
+      type="text"
+      required
+      className="w-full bg-[#1e1e1e] text-white p-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Enter your last name"
+    />
+  </div>
+
+  <div>
+    <label className="block text-sm mb-1 text-white">Email *</label>
+    <input
+      name="email"
+      type="email"
+      required
+      onBlur={validateEmail}
+      className={`w-full bg-[#1e1e1e] text-white p-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 ${
+        emailError ? "focus:ring-red-500 border-red-500" : "focus:ring-blue-500"
+      }`}
+      placeholder="your@email.com"
+    />
+    {emailError && (
+      <p className="text-red-500 text-sm mt-1">{emailError}</p>
+    )}
+  </div>
+
+  {/* Added Contact Number field */}
+  <div>
+    <label className="block text-sm mb-1 text-white">Contact Number *</label>
+    <input
+      name="phone"
+      type="text"
+      required
+      className="w-full bg-[#1e1e1e] text-white p-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Enter your contact number"
+    />
+  </div>
+
+  <div>
+    <label className="block text-sm mb-1 text-white">Message</label>
+    <textarea
+      name="message"
+      rows="5"
+      className="w-full bg-[#1e1e1e] text-white p-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      placeholder="Write your message here..."
+    ></textarea>
+  </div>
+
+  <div className="pt-4">
+    <button
+      type="submit"
+      className="w-full border border-white py-2 rounded-full text-white hover:bg-white hover:text-black transition duration-300"
     >
-    <div>
-      <label className="block text-sm mb-1 text-white">First name *</label>
-      <input
-        name="firstName"
-        type="text"
-        required
-        className="w-full bg-[#1e1e1e] text-white p-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        placeholder="Enter your first name"
-      />
-    </div>
-
-    <div>
-      <label className="block text-sm mb-1 text-white">Last name *</label>
-      <input
-        name="lastName"
-        type="text"
-        required
-        className="w-full bg-[#1e1e1e] text-white p-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        placeholder="Enter your last name"
-      />
-    </div>
-
-    <div>
-  <label className="block text-sm mb-1 text-white">Email *</label>
-  <input
-    name="email"
-    type="email"
-    required
-    onBlur={validateEmail}
-    className={`w-full bg-[#1e1e1e] text-white p-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 ${
-      emailError ? "focus:ring-red-500 border-red-500" : "focus:ring-blue-500"
-    }`}
-    placeholder="your@email.com"
-  />
-  {emailError && (
-    <p className="text-red-500 text-sm mt-1">{emailError}</p>
-  )}
-</div>
-
-
-    <div>
-      <label className="block text-sm mb-1 text-white">Message</label>
-      <textarea
-        name="message"
-        rows="5"
-        className="w-full bg-[#1e1e1e] text-white p-3 rounded-md placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        placeholder="Write your message here..."
-      ></textarea>
-    </div>
-
-    <div className="pt-4">
-      <button
-        type="submit"
-        className="w-full border border-white py-2 rounded-full text-white hover:bg-white hover:text-black transition duration-300"
+      Submit
+    </button>
+    {success && (
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="text-green-400 text-sm text-center mt-4"
       >
-        Submit
-      </button>
-      {success && (
-    <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="text-green-400 text-sm text-center mt-4"
-    >
-      ✅ Message sent successfully!
-    </motion.div>
-  )}
-    </div>
-  </form>
+        ✅ Message sent successfully!
+      </motion.div>
+    )}
+  </div>
+</form>
+
 </div>
 
 
@@ -260,7 +272,7 @@ export default function Contact() {
 
   {[
     { count: 2000, label: "Projects Completed", suffix: "+" },
-    { count: 500, label: "Skilled Craftsmen", suffix: "+" },
+    { count: 100, label: "Skilled Craftsmen", suffix: "+" },
     { count: 30000, label: "Inhouse Workspace", suffix: " sqft" },
     { count: 13, label: "Years Experience", suffix: "+" },
   ].map((item, i) => (
@@ -314,12 +326,47 @@ export default function Contact() {
          Get Directions
       </a>
     </div>
+    
   </div>
 </div>
 
 
         </div>
-      
+           <div className="text-center my-20 px-4">
+ <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
+  Our India Office
+</h2>
+<p className="text-base md:text-lg text-gray-300 max-w-xl mx-auto">
+  Located in Mangaluru, our India branch plays a key role in supporting the pre-production phase of our projects, ensuring seamless collaboration with our Dubai operations.
+</p>
+
+
+  <div className="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl px-10 py-12 mt-10 w-full max-w-5xl mx-auto shadow-2xl overflow-hidden">
+    {/* Glow Accent Border */}
+    <div className="absolute inset-0 z-0 rounded-3xl bg-gradient-to-tr from-[#9b51e0] to-[#007bff] opacity-20 blur-3xl"></div>
+
+    <div className="relative z-10 flex flex-col items-center justify-center text-white text-center space-y-4">
+      <h3 className="text-2xl md:text-3xl font-semibold leading-relaxed">
+        Creative Crafters
+      </h3>
+      <p className="text-sm md:text-base text-gray-300">
+       WR6P+Q92, Bangrakuloor, Kottara, Mangaluru, Karnataka 575013, India
+      </p>
+      <a
+        href="https://maps.app.goo.gl/a3AkweKuvdwS5twv5"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-block bg-white text-[#1a1d4a] font-semibold py-3 px-6 rounded-full shadow-md hover:bg-gray-200 transition duration-300"
+      >
+         Get Directions
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+
+              
 
       {/* WhatsApp Floating Button */}
       <a
@@ -341,15 +388,21 @@ export default function Contact() {
     
     {/* Brand & Contact Info */}
     <div>
-      <h3 className="text-3xl font-extrabold bg-gradient-to-r from-[#a044ff] to-[#2a9df4] bg-clip-text text-transparent mb-4">
-        HEAD <span className="ml-1">ON</span>
-      </h3>
+           <Link to="/" className="flex items-center">
+  <img 
+    src="/Images/logo1.png" 
+    alt="Logo" 
+    className="h-16 w-auto object-contain"
+
+
+  />
+</Link>
       <p className="text-gray-400 mb-4">
         Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
       </p>
       <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
       <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-      <p className="text-gray-400 flex items-center gap-2">✉️ contact@headon.ae</p>
+      <p className="text-gray-400 flex items-center gap-2">✉️ reachus@headon.ae</p>
     </div>
 
     {/* Services */}
