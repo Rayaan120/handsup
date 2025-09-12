@@ -105,16 +105,16 @@ export default function Contact() {
 
         </div>
 
-       <div className="flex flex-col items-center gap-16 px-12 py-20 max-w-6xl mx-auto">
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 px-12 py-20 max-w-6xl mx-auto">
   {/* Contact Us form */}
-  <div className="w-full max-w-5xl">
+  <div className="w-full">
     <h3 className="text-3xl font-extrabold mb-10 text-center text-white tracking-tight">
       Contact Us
     </h3>
-   <form
-  onSubmit={handleSubmit}
-  className="border border-white rounded-xl p-10 space-y-6 bg-[#000000]/60 backdrop-blur"
->
+    <form
+      onSubmit={handleSubmit}
+      className="border border-white rounded-xl p-10 space-y-6 bg-[#000000]/60 backdrop-blur"
+    >
   <div>
     <label className="block text-sm mb-1 text-white">First name *</label>
     <input
@@ -198,67 +198,62 @@ export default function Contact() {
 </div>
 
 
-     {/* Want to Reach Us Quicker cards */}
-  <div className="w-full max-w-5xl">
+   {/* Want to Reach Us Quicker cards */}
+  <div className="w-full">
     <h3 className="text-3xl font-extrabold mb-10 text-center text-white tracking-tight">
       Want to Reach Us Quicker?
     </h3>
     <div className="space-y-8">
-    {[
-      {
-        icon: <PiPhoneCallDuotone className="text-5xl text-purple-400" />,
-        title: "Phone",
-        lines: ["+971 4 3322218", "+971 50 6975805"],
-      },
-      {
-        icon: <PiEnvelopeSimpleDuotone className="text-5xl text-pink-400" />,
-        title: "Email",
-        lines: ["reachus@headon.ae"],
-      },
-      {
-        icon: <PiMapPinDuotone className="text-5xl text-blue-400" />,
-        title: "Office",
-        lines: ["17 14a Street, Ras Al Khor, Dubai", "United Arab Emirates"],
-      },
-      {
-        icon: <PiClockDuotone className="text-5xl text-yellow-400" />,
-        title: "Business Hours",
-        lines: ["Mon - Sat: 9AM – 6PM", "Sun: Closed"],
-      },
-    ].map(({ icon, title, lines }, idx) => (
-      <motion.div
-        key={idx}
-        whileHover={{ scale: 1.07 }}
-        transition={{ type: "spring", stiffness: 250 }}
-        className="relative group bg-white/5 border border-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-xl hover:shadow-purple-500/30 transition-transform duration-300"
-      >
-        {/* Gradient vertical bar */}
-        <div className="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-[#9b51e0] to-[#007bff] rounded-full"></div>
+      {[
+        {
+          icon: <PiPhoneCallDuotone className="text-5xl text-purple-400" />,
+          title: "Phone",
+          lines: ["+971 4 3322218", "+971 50 6975805"],
+        },
+        {
+          icon: <PiEnvelopeSimpleDuotone className="text-5xl text-pink-400" />,
+          title: "Email",
+          lines: ["reachus@headon.ae"],
+        },
+        {
+          icon: <PiMapPinDuotone className="text-5xl text-blue-400" />,
+          title: "Office",
+          lines: ["17 14a Street, Ras Al Khor, Dubai", "United Arab Emirates"],
+        },
+        {
+          icon: <PiClockDuotone className="text-5xl text-yellow-400" />,
+          title: "Business Hours",
+          lines: ["Mon - Sat: 9AM – 6PM", "Sun: Closed"],
+        },
+      ].map(({ icon, title, lines }, idx) => (
+        <motion.div
+          key={idx}
+          whileHover={{ scale: 1.07 }}
+          transition={{ type: "spring", stiffness: 250 }}
+          className="relative group bg-white/5 border border-white/10 backdrop-blur-xl p-6 rounded-2xl shadow-xl hover:shadow-purple-500/30 transition-transform duration-300"
+        >
+          {/* Gradient vertical bar */}
+          <div className="absolute top-0 left-0 h-full w-1 bg-gradient-to-b from-[#9b51e0] to-[#007bff] rounded-full"></div>
 
-        <div className="flex items-start gap-5">
-          <motion.div
-            whileHover={{ scale: 1.1, rotate: 3 }}
-            transition={{ duration: 0.3 }}
-            className="w-14 h-14 min-w-[56px] rounded-full bg-white/10 text-white flex items-center justify-center text-2xl shadow-inner border border-white/10"
-          >
-            {icon}
-          </motion.div>
-
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-1">{title}</h4>
-            <p className="text-sm text-gray-300 leading-relaxed">
-              {lines.map((line, i) => (
-                <span key={i}>
-                  {line}
-                  <br />
-                </span>
-              ))}
-            </p>
+          <div className="flex items-start gap-5">
+            <div className="w-14 h-14 min-w-[56px] rounded-full bg-white/10 text-white flex items-center justify-center text-2xl shadow-inner border border-white/10">
+              {icon}
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-white mb-1">{title}</h4>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                {lines.map((line, i) => (
+                  <span key={i}>
+                    {line}
+                    <br />
+                  </span>
+                ))}
+              </p>
+            </div>
           </div>
-        </div>
-      </motion.div>
-    ))}
-  </div>
+        </motion.div>
+      ))}
+    </div>
 </div>
 </div>
 
@@ -332,38 +327,7 @@ export default function Contact() {
 
 
         </div>
-           <div className="text-center my-20 px-4">
- <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
-  Our India Office
-</h2>
-<p className="text-base md:text-lg text-gray-300 max-w-xl mx-auto">
-  Located in Mangaluru, our India branch plays a key role in supporting the pre-production phase of our projects, ensuring seamless collaboration with our Dubai operations.
-</p>
-
-
-  <div className="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl px-10 py-12 mt-10 w-full max-w-5xl mx-auto shadow-2xl overflow-hidden">
-    {/* Glow Accent Border */}
-    <div className="absolute inset-0 z-0 rounded-3xl bg-gradient-to-tr from-[#9b51e0] to-[#007bff] opacity-20 blur-3xl"></div>
-
-    <div className="relative z-10 flex flex-col items-center justify-center text-white text-center space-y-4">
-      <h3 className="text-2xl md:text-3xl font-semibold leading-relaxed">
-        Creative Crafters
-      </h3>
-      <p className="text-sm md:text-base text-gray-300">
-       WR6P+Q92, Bangrakuloor, Kottara, Mangaluru, Karnataka 575013, India
-      </p>
-      <a
-        href="https://maps.app.goo.gl/a3AkweKuvdwS5twv5"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-6 inline-block bg-white text-[#1a1d4a] font-semibold py-3 px-6 rounded-full shadow-md hover:bg-gray-200 transition duration-300"
-      >
-         Get Directions
-      </a>
-    </div>
-    
-  </div>
-</div>
+        
 
 
               
@@ -400,9 +364,9 @@ export default function Contact() {
       <p className="text-gray-400 mb-4">
         Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
       </p>
-      <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
-      <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-      <p className="text-gray-400 flex items-center gap-2">✉️ reachus@headon.ae</p>
+      <p className="text-gray-400 flex items-center gap-2 mb-1"> Dubai, United Arab Emirates</p>
+      <p className="text-gray-400 flex items-center gap-2 mb-1"> +971 4 332 2218</p>
+      <p className="text-gray-400 flex items-center gap-2">reachus@headon.ae</p>
     </div>
 
     {/* Services */}

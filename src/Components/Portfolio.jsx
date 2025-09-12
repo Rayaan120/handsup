@@ -21,40 +21,21 @@ const [currentImageIndex, setCurrentImageIndex] = useState(0); // Add state for 
     category: 'Exhibition Stands',
     image: '/Images/stand1.jpg',
   },
-  {
-    category: 'Interior Design and Fit-Out Works',
-    image: '/Images/interior1.jpg',
-  },
+  
  
-  {
-    category: 'Advertising',
-    image: '/Images/billboard_design_01.jpg',
-  },
   {
     category: 'Exhibition Stands',
     image: '/Images/stand2.jpg',
   },
-  {
-    category: 'Interior Design and Fit-Out Works',
-    image: '/Images/interior2.jpg',
-  },
+  
  
-  {
-    category: 'Advertising',
-    image: '/Images/billboard_design_02.jpg',
-  },
+  
   {
     category: 'Exhibition Stands',
     image: '/Images/stand3.jpg',
   },
-  {
-    category: 'Interior Design and Fit-Out Works',
-    image: '/Images/interior3.jpg',
-  },
-  {
-    category: 'Custom Wooden Requirements',
-    image: '/Images/customwooden1.jpg',
-  },
+  
+  
   {
     category: 'Custom Wooden Requirements',
     image: '/Images/customwooden2.jpg',
@@ -305,24 +286,32 @@ const handlePrevImage = () => {
 
 
         {/* Filter Buttons */}
-        <div className="flex justify-center flex-wrap gap-3 my-10 font-sans">
+<div className="flex justify-center my-12 font-sans">
+  <div className="flex bg-black text-white rounded-2xl px-10 py-4 gap-10 shadow-xl">
+    {filters.map((item, index) => (
+      <button
+        key={index}
+        onClick={() => setActiveFilter(item)}
+        className={`flex items-center gap-3 text-lg font-semibold transition-colors duration-300 ${
+          activeFilter === item
+            ? "text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400"
+            : "text-gray-400 hover:text-gray-200"
+        }`}
+      >
+        {/* Dot indicator */}
+        <span
+          className={`w-3 h-3 rounded-full ${
+            activeFilter === item
+              ? "bg-gradient-to-r from-purple-400 to-blue-400"
+              : "bg-gray-400"
+          }`}
+        ></span>
+        {item}
+      </button>
+    ))}
+  </div>
+</div>
 
-         {filters.map((item, index) => (
-  <motion.button
-    key={index}
-    whileTap={{ scale: 0.95 }} // click animation
-    onClick={() => setActiveFilter(item)}
-    className={`px-5 py-2 rounded-full font-semibold transition-all duration-300 ${
-      activeFilter === item
-        ? 'bg-gradient-to-r from-[#8e2de2] to-[#4a90e2] text-white shadow-lg'
-        : 'bg-[#ece9ff] text-black hover:bg-[#d6d1ff]'
-    }`}
-  >
-    {item}
-  </motion.button>
-))}
-
-        </div>
 
         {/* Filtered Cards */}
         {/* Image Gallery Only */}
@@ -458,9 +447,9 @@ const handlePrevImage = () => {
                   <p className="text-gray-400 mb-4">
                     Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
                   </p>
-                  <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
-                  <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-                  <p className="text-gray-400 flex items-center gap-2">✉️ reachus@headon.ae</p>
+                  <p className="text-gray-400 flex items-center gap-2 mb-1"> Dubai, United Arab Emirates</p>
+                  <p className="text-gray-400 flex items-center gap-2 mb-1"> +971 4 332 2218</p>
+                  <p className="text-gray-400 flex items-center gap-2">reachus@headon.ae</p>
                 </div>
             
                 {/* Services */}

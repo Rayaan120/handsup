@@ -152,15 +152,15 @@ export default function ExhibitionWebsite() {
       
       {/* Text Column */}
       <motion.div
-        initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="md:w-1/2"
-      >
-        <h2 className="text-4xl font-bold mb-4">{section.id} {section.title}</h2>
-        <p className="text-gray-300 leading-relaxed mb-6">{section.desc}</p>
-        <div className="w-16 h-1 bg-white mb-6"></div>
+  initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+  className="md:w-1/2"
+>
+  <h2 className="text-4xl font-bold mb-4">{section.title}</h2>
+  <p className="text-gray-300 leading-relaxed mb-6">{section.desc}</p>
+  <div className="w-16 h-1 bg-white mb-6"></div>
 
         <div className="flex flex-wrap gap-3">
           {section.services.map((item, index) => (
@@ -381,9 +381,9 @@ export default function ExhibitionWebsite() {
              <p className="text-gray-400 mb-4">
                Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
              </p>
-             <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
-             <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-             <p className="text-gray-400 flex items-center gap-2">✉️ reachus@headon.ae</p>
+             <p className="text-gray-400 flex items-center gap-2 mb-1"> Dubai, United Arab Emirates</p>
+             <p className="text-gray-400 flex items-center gap-2 mb-1"> +971 4 332 2218</p>
+             <p className="text-gray-400 flex items-center gap-2">reachus@headon.ae</p>
            </div>
        
            {/* Services */}

@@ -328,9 +328,9 @@ const AboutContent = () => {
                  <p className="text-gray-400 mb-4">
                    Dubai's premier design studio specializing in exhibition stands, interior design, fit out works, and advertising solutions.
                  </p>
-                 <p className="text-gray-400 flex items-center gap-2 mb-1">📍 Dubai, United Arab Emirates</p>
-                 <p className="text-gray-400 flex items-center gap-2 mb-1">📞 +971 4 332 2218</p>
-                 <p className="text-gray-400 flex items-center gap-2">✉️ reachus@headon.ae</p>
+                 <p className="text-gray-400 flex items-center gap-2 mb-1">Dubai, United Arab Emirates</p>
+                 <p className="text-gray-400 flex items-center gap-2 mb-1"> +971 4 332 2218</p>
+                 <p className="text-gray-400 flex items-center gap-2">reachus@headon.ae</p>
                </div>
            
                {/* Services */}
